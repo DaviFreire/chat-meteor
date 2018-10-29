@@ -1,0 +1,24 @@
+<template name="listuser">
+	<div class="container">
+		<table>
+	        <thead>
+	          <tr>
+	              <th>Usuário</th>
+	              <th></th>
+	          </tr>
+	        </thead>
+	        <tbody>
+				{{#each users}}
+			        <tr>
+			            <td>{{username}}</td>
+			            <td>
+			            	<a href="#" class="new-chat secondary-content" title="Iniciar uma nova conversa">
+			            		<i class="small material-icons" style='cursor:pointer'>chat_bubble_outline</i>
+			            	</a>			            	
+			            </td>
+			          </tr>
+			    {{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>

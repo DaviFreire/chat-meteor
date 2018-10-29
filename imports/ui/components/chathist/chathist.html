@@ -1,0 +1,28 @@
+<template name="chathist">
+	<div class="container">
+		<table>
+	        <thead>
+	          <tr>
+	              <th>Usuário</th>
+	              <th>Data de Início</th>
+	              <th>Data de Término</th>
+	              <th></th>
+	          </tr>
+	        </thead>
+	        <tbody>
+				{{#each chat in chatuser}}
+			        <tr>
+			            <td>{{formatUser chat}}</td>
+			            <td>{{formatDate chat.createdAt}}</td>
+			            <td>{{formatDate chat.stoppedAt}}</td>
+			            <td>
+			            	<a href="#" class="open-chat secondary-content" title="Abrir chat" id="{{chat._id}}">
+			            		<i class="small material-icons" style='cursor:pointer'>chat</i>
+			            	</a>
+			            </td>
+			          </tr>
+			    {{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>

@@ -1,0 +1,38 @@
+<template name="chat">
+  	<div class="container">
+  		{{#if chatativo}}
+	  		<div class="left space">
+	  			<button class="btn waves-effect red close-chat" type="submit" name="action">Finalizar conversa
+			    	<i class="material-icons right">close</i>
+			 	</button>
+	  		</div>
+	  	{{/if}}
+  		<div class="right space">
+  			<b>Duração da conversa: {{duracao}}</b>
+  		</div>
+  		<div class="messages-box">
+    		<div class="messages-scroll">
+				{{#each messages}}
+					<div class="message {{usermsg}}">
+					    <div class="{{usermsgcolor}}">{{username}} 
+					    	<span class="timestamp">{{timestamp}}</span>
+					    </div>
+					    <div class="message-text">{{msg}}</div>
+				  	</div>
+				{{else}}
+				    <div class="message">Seja o primeiro a falar!</div>
+				{{/each}}
+			</div>
+		</div>
+		{{#if chatativo}}
+			<div class="new-message-container">
+				<form>
+					<input type="text" class="message-input" placeholder="Digite sua mensagem aqui...">
+					<button class="btn waves-effect blue" type="submit" name="action">Enviar
+					    <i class="material-icons right">send</i>
+					 </button>
+				</form>
+			</div>
+		{{/if}}
+	</div>
+</template>

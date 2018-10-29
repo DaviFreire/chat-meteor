@@ -1,0 +1,37 @@
+<template name="navbar">
+	{{#if currentUser}}
+	    <nav class="nav-extended blue">
+			<div class="container">
+				<div class="nav-wrapper">
+					<a href="/" class="brand-logo">Chat Mundi</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li>{{> loginButtons}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="nav-content">
+			      	<ul class="tabs tabs-transparent">
+				        <li class="tab col s3"><a class="active" id="listuser" href="/listuser">Usuários</a></li>
+				        <li class="tab col s3"><a id="chathist" href="/chathist">Histórico</a></li>
+				        <li class="tab col s3" style='display: none;'><a id="chat" href="/chathist">chat</a></li>
+			     	</ul>
+			    </div>
+			</div>
+		</nav>
+
+		{{> yield}} 
+
+	{{else}}
+		<nav class="blue">
+			<div class="container">
+				<div class="nav-wrapper">
+					<a href="#" class="brand-logo">Chat Mundi</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li>{{> loginButtons}}</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	{{/if}}		
+</template>
